@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -55,8 +56,9 @@ public class JobController {
 
         else{
             jobData.add(newJob);
-            model.addAttribute("job", newJob);
-            return "job-detail";
+            //model.addAttribute("job", newJob);
+            return "redirect:/job?id=" + newJob.getId();
+
         }
 
 
